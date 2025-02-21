@@ -10,12 +10,12 @@
     <script src="login.js"></script>
 </head>
 <body>
-    <div id ='login' style="display: none;">
+    <div id='login' style="display: none;">
         <label for="uname"><b>Username</b></label>
-        <input id = 'username' type="text" placeholder="Enter Username" name="uname" required>
+        <input id='username' type="text" placeholder="Enter Username" name="uname" required>
     
         <label for="psw"><b>Password</b></label>
-        <input id = 'password' type="password" placeholder="Enter Password" name="psw" required>
+        <input id='password' type="password" placeholder="Enter Password" name="psw" required>
     
         <button type="submit" onclick="checkLogin()">Login</button>
         <label>
@@ -24,40 +24,37 @@
     </div>
     
     <header>
-            <img onclick = loginScreen() src="images\BaflLogo.png">
-            <h1><a href="index.html">News</a></h1>
-            <h1><a href="table.html">Table</a></h1>
-            <h1><a href="hallfame.html">Hall of Fame</a></h1>
-            <h1><a href="teamgen.html">Team Generator</a></h1>
-            <h1 id = 'adminLink' style="visibility: hidden;"><a href="admin.html">Admin</a></h1>
+        <img onclick="loginScreen()" src="images\BaflLogo.png" alt="BAFL Logo">
+        <h1><a href="index.html">News</a></h1>
+        <h1><a href="table.html">Table</a></h1>
+        <h1><a href="hallfame.html">Hall of Fame</a></h1>
+        <h1><a href="teamgen.html">Team Generator</a></h1>
+        <h1 id='adminLink' style="visibility: hidden;"><a href="admin.html">Admin</a></h1>
     </header>
 
-    <div class ="content">
-    <div class="function">
-        <div class="players">
-          <h2>Player 1:</h2>
-          <input type="text" id="p1name">
-          <h2>Player 2:</h2>
-          <input type="text" id="p2name">
-          <div class="teams">
-            <h2>Match type: <span class = "type" id = 'type'></span></h2>
-            <p id = p1team></p>
-            <p id = p2team></p>
-          </div>
+    <div class="content">
+        <div class="function">
+            <div class="players">
+                <h2>Player 1:</h2>
+                <input type="text" id="p1name">
+                <h2>Player 2:</h2>
+                <input type="text" id="p2name">
+                <div class="teams">
+                    <h2>Match type: <span class="type" id='type'></span></h2>
+                    <p id="p1team"></p>
+                    <p id="p2team"></p>
+                </div>
+            </div>
+            <div id="buttons">  
+                <button id="btn1" onclick="generateTeam()">Spin for Teams</button>
+                <select id="optionDropdown">
+                    <option id="option1">Any</option>
+                    <option id="option2">Strong</option>
+                    <option id="option3">Mid</option>
+                    <option id="option4">Weak</option>
+                </select>
+            </div>
         </div>
-      <div id="buttons">  
-        <button id="btn1" onclick="generateTeam()">Generate Teams</button>
-        <!-- <input type="checkbox" id="finalsovr" onclick="finalsOvr()">  -->
-        <select id="optionDropdown">
-          <option id="option1">Any</option>
-          <option id="option2">Strong</option>
-          <option id="option3">Mid</option>
-          <option id="option4">Weak</option>
-        </select>
-      </div>
-        
     </div>
-  </div>
 </body>
-
 </html>

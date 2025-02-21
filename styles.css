@@ -68,49 +68,92 @@ a:hover {
 .function {
     background-color: #212121;
     padding: 40px;
-    /* border-radius: 15px; */
     display: flex;
-    flex-basis: 80%;
     flex-direction: column;
-    width: 50%;
+    width: 80%;
+    max-width: 600px;
     gap: 20px;
-    border: solid #24e3fd;
+    border: solid 3px #24e3fd;
+    border-radius: 15px;
     align-items: center;
-    margin-top: 30px;
-    justify-content: center;
+    margin: 30px auto;
+    box-shadow: 0 0 20px rgba(36, 227, 253, 0.5);
+}
+
+.players {
+    width: 100%;
+}
+
+.teams {
+    width: 100%; /* Full width of its parent container */
+    max-width: 500px; /* Optional: Set a maximum width for better layout control */
+    background-color: #000; /* Black background for contrast */
+    border: 2px solid #24e3fd; /* Cyan border for visibility */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner padding for spacing */
+    margin-top: 20px; /* Space above the .teams section */
+    text-align: center; /* Center-align text inside the .teams section */
+    box-shadow: 0 0 10px rgba(36, 227, 253, 0.5); /* Optional: Add a glowing effect for better visual appeal */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    gap: 10px;
-}
-
-.teams {
     width: 100%;
+    gap: 15px;
+    align-items: center;
 }
 
 #btn1 {
     height: 80px;
-    background-color: black;
-    color: white;
-    width: 100px;
-    border-radius: 10%;
+    background-color: #24e3fd;
+    color: black;
+    width: 200px;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+#btn1:hover {
+    background-color: #1cb5d4;
+    transform: scale(1.05);
+}
 
- #btn1:hover {
-    height: 80px;
-    background-color: black;
-    cursor: pointer;
-} 
+#btn1:active {
+    transform: scale(0.95);
+}
 
 input {
-    background-color: black;
+    background-color: #000;
     color: white;
     width: 100%;
+    padding: 10px;
+    border: 1px solid #24e3fd;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
+
+#optionDropdown {
+    width: 200px;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: 1px solid #24e3fd;
+    border-radius: 5px;
+}
+
+.type, #p1team, #p2team {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #24e3fd;
+}
+
 
 /* Tables */
 #tables {
