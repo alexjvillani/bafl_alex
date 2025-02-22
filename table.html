@@ -5,22 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #intro-video {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             object-fit: contain;
+             z-index: 9999;
+             background-color: #68f6ff;
+         }
+         #main-content {
+             display: none;
+         }
+    </style>
 </head>
 
-
 <body>
-    <header>
-        <img onclick = loginScreen() src="images\BaflLogo.png">
-        <h1><a href="index.html">News</a></h1>
-        <h1><a href="table.html">Table</a></h1>
-        <h1><a href="hallfame.html">Hall of Fame</a></h1>
-        <h1><a href="teamgen.html">Team Generator</a></h1>
-        <h1 id = 'adminLink' style="visibility: hidden;"><a href="admin.html">Admin</a></h1>
-    </header>
-    <div class="content">
-        <div id="tables">
-            <div id="tableContainer" class="playpass playpass-widget"><script src="https://playpass.com/widgets/RhiTrEy.js"></script></div>
-            <div id="tableContainer" class="playpass playpass-widget"><script src="https://playpass.com/widgets/RwZumER.js"></script></div> 
+    <video id="intro-video" muted playsinline>
+        <source src="images\logoVideo\bigAntLogoFast.mp4.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div id="main-content">
+        <header>
+            <img onclick="loginScreen()" src="images\BaflLogo.png" alt="BAFL Logo">
+            <h1><a href="index.html">News</a></h1>
+            <h1><a href="table.html">Table</a></h1>
+            <h1><a href="hallfame.html">Hall of Fame</a></h1>
+            <h1><a href="teamgen.html">Team Generator</a></h1>
+            <h1 id='adminLink' style="visibility: hidden;"><a href="admin.html">Admin</a></h1>
+        </header>
+        <div class="content">
+            <div id="tables">
+                <div id="tableContainer" class="playpass playpass-widget"><script src="https://playpass.com/widgets/RhiTrEy.js"></script></div>
+                <div id="tableContainer" class="playpass playpass-widget"><script src="https://playpass.com/widgets/RwZumER.js"></script></div> 
+            </div>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('intro-video');
+    var mainContent = document.getElementById('main-content');
+
+    if (sessionStorage.getItem('videoPlayed')) {
+        video.style.display = 'none';
+        mainContent.style.display = 'block';
+    } else {
+        mainContent.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+        
+        video.addEventListener('ended', function() {
+            this.style.display = 'none';
+            mainContent.style.display = 'block';
+            sessionStorage.setItem('videoPlayed', 'true');
+        });
+    }
+});
+    </script>
 </body>
+</html>
